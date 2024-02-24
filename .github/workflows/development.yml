@@ -1,7 +1,9 @@
 name: Deploy to Development
 
 on:
-  workflow_call:
+  push:
+    branches:
+      - main
 
 env:
   IMAGE_NAME: ${{ github.repository }}
