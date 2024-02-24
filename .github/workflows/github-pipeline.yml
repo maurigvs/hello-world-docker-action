@@ -6,4 +6,4 @@ on:
       - main
 jobs:
   development:
-    uses: ./development.yml@main
+    uses: ./.github/workflows/development.yml@main
