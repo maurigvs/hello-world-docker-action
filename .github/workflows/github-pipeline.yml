@@ -1,0 +1,9 @@
+name: Development CI
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  development:
+    uses: ./development.yml
