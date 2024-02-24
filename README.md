@@ -1,21 +1,31 @@
-# Hello world docker action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+# deploy-to-development
+Workflow for build and deploy a Docker Image to registry
 
-## Inputs
+## Actions applied to this workflow
 
-## `who-to-greet`
+- [actions/checkout](https://github.com/actions/checkout)
+- [docker/setup-buildx-action](https://github.com/docker/setup-buildx-action)
+- [docker/login-action](https://github.com/docker/login-action)
+- [docker/build-push-action](https://github.com/docker/build-push-action)
 
-**Required** The name of the person to greet. Default `"World"`.
+## Configuration Dependencies
 
-## Outputs
+#### Environments
 
-## `time`
+```
+  development
+```
 
-The time we greeted you.
+#### Environment Variables
 
-## Example usage
+| Name       | Default     | Description                                                   |
+| :--------  | :---------- |:--------------------------------------------------------------|
+| `REGISTRY` | `docker.io` | **Required**. Id of Registry that will host the Docker Image  |
 
-uses: actions/hello-world-docker-action@v2
-with:
-  who-to-greet: 'Mona the Octocat'
+#### Environment Secrets
+
+| Name       | Defaul      | Description                                                   |
+|:-----------|:------------|:--------------------------------------------------------------|
+| `USER`     | `-`         | **Required**. Login of the Registry Account                   |
+| `TOKEN`    | `-`         | **Required**. Unique access Token                             |

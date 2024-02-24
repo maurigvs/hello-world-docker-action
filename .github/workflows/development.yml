@@ -8,6 +8,7 @@ env:
 
 jobs:
   deploy-to-development:
+    name: Deploy to Development
     runs-on: ubuntu-latest
     environment: development
 
