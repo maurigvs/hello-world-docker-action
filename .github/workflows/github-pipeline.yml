@@ -7,3 +7,6 @@ on:
 jobs:
   development:
     uses: ./.github/workflows/development.yml
+    permissions:
+      contents: read
+      packages: write
