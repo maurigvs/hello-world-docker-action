@@ -19,13 +19,13 @@ Workflow for build and deploy a Docker Image to registry
 
 #### Environment Variables
 
-| Name       | Default     | Description                                                   |
-| :--------  | :---------- |:--------------------------------------------------------------|
-| `REGISTRY` | `docker.io` | **Required**. Id of Registry that will host the Docker Image  |
+| Variable name | Default value   | Description                                                   |
+|:--------------|:----------------|:--------------------------------------------------------------|
+| `REGISTRY`    | `docker.io`     | **Required**. Id of Registry that will host the Docker Image  |
 
 #### Environment Secrets
 
-| Name       | Defaul      | Description                                                   |
-|:-----------|:------------|:--------------------------------------------------------------|
-| `USER`     | `-`         | **Required**. Login of the Registry Account                   |
-| `TOKEN`    | `-`         | **Required**. Unique access Token                             |
+| Secret name | Default value | Description                                                   |
+|:------------|:--------------|:--------------------------------------------------------------|
+| `USER`      | `***`         | **Required**. Login of the Registry Account                   |
+| `TOKEN`     | `***`         | **Required**. Unique access Token                             |
