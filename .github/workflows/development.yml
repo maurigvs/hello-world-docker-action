@@ -5,9 +5,12 @@ on:
     branches:
       - main
 
+env:
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   checkout-repo:
-    name: Checkout ${{ github.repository }}
+    name: Checkout ${{ env.IMAGE_NAME }}
     runs-on: ubuntu-latest
 
     permissions:
@@ -15,7 +18,7 @@ jobs:
       packages: write
 
     steps:
-      - name: Checkout ${{ github.repository }}
+      - name: Checkout ${{ env.IMAGE_NAME }}
         uses: actions/checkout@v4
 
   setup-docker-and-login:
@@ -55,6 +58,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ github.repository }}:latest
+          tags: ${{ env.IMAGE_NAME }}:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
