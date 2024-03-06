@@ -7,7 +7,6 @@ on:
         description: Namespace
         required: true
         type: string
-        default: ${{ github.ref }}
       web:
         description: Web
         required: true
@@ -30,44 +29,36 @@ on:
         default: 'latest'
       audit:
         description: Audit
-        required: true
+        required: false
         type: string
-        default: 'latest'
       plfk:
         description: PLFK
-        required: true
+        required: false
         type: string
-        default: 'latest'
       delta-report:
         description: Delta Report
-        required: true
+        required: false
         type: string
-        default: 'latest'
       fitex:
         description: FITEX
-        required: true
+        required: false
         type: string
-        default: 'latest'
       master-data:
         description: Master Data
-        required: true
+        required: false
         type: string
-        default: 'latest'
       allocation:
         description: Allocation
-        required: true
+        required: false
         type: string
-        default: 'latest'
       position:
         description: Position
-        required: true
+        required: false
         type: string
-        default: 'latest'
       teams:
         description: Teams
-        required: true
+        required: false
         type: string
-        default: 'latest'
     secrets:
       USER:
         required: true
