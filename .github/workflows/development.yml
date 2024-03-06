@@ -1,17 +1,37 @@
-name: Deploy to Development
+name: Deploy On-Demand
 
 on:
-  push:
-    branches-ignore:
-      - main
+  workflow_dispatch:
+    inputs:
+      image-name:
+        description: Image name
+        required: true
+        type: string
+        options:
+          - maurigvs/hello-world-docker-action
+      image-tag:
+        description: Image tag
+        required: true
+        type: string
+        default: 'latest'
+      registry:
+        description: Registry
+        required: true
+        type: string
+        options:
+          - docker.io
+    secrets:
+      USER:
+        required: true
+      TOKEN:
+        required: true
 
 env:
-  IMAGE_NAME: ${{ github.repository }}
-  IMAGE_TAG: ${{ github.ref_name }}
+  repository: maurigvs/hello-world-docker-action
 
 jobs:
   workflow:
-    name: Build and Push Docker Image
+    name: Development
     runs-on: ubuntu-latest
     environment: development
 
@@ -20,16 +40,20 @@ jobs:
       packages: write
 
     steps:
-      - name: Checkout ${{ env.IMAGE_NAME }}
+      - name: Checkout ${{ env.repository }}
         uses: actions/checkout@v4
+        with:
+          repository: ${{ env.repository }}
+          ref: github-workflow
+          path: hello-world
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Log into registry ${{ vars.REGISTRY }}
+      - name: Log into ${{ inputs.registry }}
         uses: docker/login-action@v3
         with:
-          registry: ${{ vars.REGISTRY }}
+          registry: ${{ inputs.registry }}
           username: ${{ secrets.USER }}
           password: ${{ secrets.TOKEN }}
 
@@ -39,6 +63,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+          tags: ${{ inputs.image-name }}:${{ inputs.image-tag }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
