@@ -1,4 +1,4 @@
-name: Build and Push
+name: Docker Pipeline
 
 on:
   workflow_dispatch:
@@ -13,10 +13,11 @@ on:
       TOKEN:
         required: true
 
-run-name: ${{ inputs.namespace }}
+run-name: Build and Push ${{ github.repository }}:${{ inputs.namespace }}
 
 jobs:
   build-push-image:
+    name: Build and Push
     uses: ./.github/workflows/build-push-image.yml
     with:
       namespace: ${{ inputs.namespace }}
