@@ -1,8 +1,8 @@
 name: Deploy to Development
 
 on:
-  push:
-    branches-ignore:
+  pull_request_target:
+    branches:
       - main
 
 env:
