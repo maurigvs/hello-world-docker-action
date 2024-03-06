@@ -10,107 +10,55 @@ on:
       web:
         description: Web
         required: true
-        type: choice
+        type: string
         default: latest
-        options:
-          - namespace
-          - latest
       gateway:
         description: Gateway
         required: true
-        type: choice
+        type: string
         default: latest
-        options:
-          - namespace
-          - latest
       users:
         description: Users
         required: true
-        type: choice
+        type: string
         default: latest
-        options:
-          - namespace
-          - latest
       vehicles:
         description: Vehicles
         required: true
-        type: choice
+        type: string
         default: latest
-        options:
-          - namespace
-          - latest
       audit:
         description: Audit
         required: false
-        type: choice
-        default: .
-        options:
-          - .
-          - namespace
-          - latest
+        type: string
       plfk:
         description: PLFK
         required: false
-        type: choice
-        default: .
-        options:
-          - .
-          - namespace
-          - latest
+        type: string
       delta-report:
         description: Delta Report
         required: false
-        type: choice
-        default: .
-        options:
-          - .
-          - namespace
-          - latest
+        type: string
       fitex:
         description: FITEX
         required: false
-        type: choice
-        default: .
-        options:
-          - .
-          - namespace
-          - latest
+        type: string
       master-data:
         description: Master Data
         required: false
-        type: choice
-        default: .
-        options:
-          - .
-          - namespace
-          - latest
+        type: string
       allocation:
         description: Allocation
         required: false
-        type: choice
-        default: .
-        options:
-          - .
-          - namespace
-          - latest
+        type: string
       position:
         description: Position
         required: false
-        type: choice
-        default: .
-        options:
-          - .
-          - namespace
-          - latest
+        type: string
       teams:
         description: Teams
         required: false
-        type: choice
-        default: .
-        options:
-          - .
-          - namespace
-          - latest
+        type: string
     secrets:
       USER:
         required: true
