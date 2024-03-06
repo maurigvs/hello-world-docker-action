@@ -1,3 +1,5 @@
+name: Build and Push
+
 on:
   workflow_dispatch:
     inputs:
@@ -5,35 +7,13 @@ on:
         description: namespace
         required: true
         type: string
-      web:
-        description: maestro-web
-        required: true
-        type: string
-        default: latest
-      gateway:
-        description: maestro-gateway
-        required: true
-        type: string
-        default: latest
-      users:
-        description: maestro-users
-        required: true
-        type: string
-        default: latest
-      vehicles:
-        description: maestro-vehicles
-        required: true
-        type: string
-        default: latest
-      master-data:
-        description: maestro-master-data
-        required: false
-        type: string
     secrets:
       USER:
         required: true
       TOKEN:
         required: true
+
+run-name: ${{ inputs.namespace }}
 
 jobs:
   build-push-image:
