@@ -43,56 +43,72 @@ on:
         description: Audit
         required: false
         type: choice
+        default: .
         options:
+          - .
           - namespace
           - latest
       plfk:
         description: PLFK
         required: false
         type: choice
+        default: .
         options:
+          - .
           - namespace
           - latest
       delta-report:
         description: Delta Report
         required: false
         type: choice
+        default: .
         options:
+          - .
           - namespace
           - latest
       fitex:
         description: FITEX
         required: false
         type: choice
+        default: .
         options:
+          - .
           - namespace
           - latest
       master-data:
         description: Master Data
         required: false
         type: choice
+        default: .
         options:
+          - .
           - namespace
           - latest
       allocation:
         description: Allocation
         required: false
         type: choice
+        default: .
         options:
+          - .
           - namespace
           - latest
       position:
         description: Position
         required: false
         type: choice
+        default: .
         options:
+          - .
           - namespace
           - latest
       teams:
         description: Teams
         required: false
         type: choice
+        default: .
         options:
+          - .
           - namespace
           - latest
     secrets:
