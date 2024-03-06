@@ -6,7 +6,7 @@ on:
         type: string
 
 jobs:
-  build-and-push:
+  build-push-image:
     name: Docker Image
     runs-on: ubuntu-latest
     environment: development
