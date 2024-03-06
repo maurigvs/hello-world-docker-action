@@ -7,7 +7,6 @@ on:
         description: Namespace
         required: true
         type: string
-        default: ${{ github.ref }}
       web:
         description: Web
         required: true
