@@ -1,5 +1,5 @@
 
-# deploy-to-development
+# hello-world-docker-action
 Workflow for build and deploy a Docker Image to registry
 
 ## Actions applied to this workflow
