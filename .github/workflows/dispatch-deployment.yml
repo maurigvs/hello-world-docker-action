@@ -38,4 +38,7 @@ on:
 jobs:
   build-push-image:
     uses: ./.github/workflows/build-push-image.yml
+    permissions:
+      contents: read
+      packages: write
     secrets: inherit
