@@ -1,5 +1,10 @@
 on:
   workflow_call:
+    inputs:
+      namespace:
+        required: true
+        type: string
+
 jobs:
   workflow:
     runs-on: ubuntu-latest
@@ -10,7 +15,7 @@ jobs:
       packages: write
 
     steps:
-      - name: Checkout ${{ env.IMAGE_NAME }}
+      - name: Checkout ${{ github.repository }}
         uses: actions/checkout@v4
 
       - name: Set up Docker Buildx
@@ -29,6 +34,6 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ github.repository }}:${{ github.ref_name }}
+          tags: ${{ github.repository }}:${{ inputs.namespace }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
