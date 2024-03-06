@@ -11,54 +11,90 @@ on:
         description: Web
         required: true
         type: string
-        default: 'latest'
+        default: latest
+        options:
+          - namespace
+          - latest
       gateway:
         description: Gateway
         required: true
         type: string
-        default: 'latest'
+        default: latest
+        options:
+          - namespace
+          - latest
       users:
         description: Users
         required: true
         type: string
-        default: 'latest'
+        default: latest
+        options:
+          - namespace
+          - latest
       vehicles:
         description: Vehicles
         required: true
         type: string
-        default: 'latest'
+        default: latest
+        options:
+          - namespace
+          - latest
       audit:
         description: Audit
         required: false
         type: string
+        options:
+          - namespace
+          - latest
       plfk:
         description: PLFK
         required: false
         type: string
+        options:
+          - namespace
+          - latest
       delta-report:
         description: Delta Report
         required: false
         type: string
+        options:
+          - namespace
+          - latest
       fitex:
         description: FITEX
         required: false
         type: string
+        options:
+          - namespace
+          - latest
       master-data:
         description: Master Data
         required: false
         type: string
+        options:
+          - namespace
+          - latest
       allocation:
         description: Allocation
         required: false
         type: string
+        options:
+          - namespace
+          - latest
       position:
         description: Position
         required: false
         type: string
+        options:
+          - namespace
+          - latest
       teams:
         description: Teams
         required: false
         type: string
+        options:
+          - namespace
+          - latest
     secrets:
       USER:
         required: true
